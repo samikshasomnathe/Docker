@@ -1,0 +1,6 @@
+FROM centos:7
+RUN yum install httpd -y
+ENV Hostname=sam.com
+COPY index.html /var/www/html/index.html
+EXPOSE 87
+CMD ["/usr/sbin/httpd","-DFOREGROUND"]
